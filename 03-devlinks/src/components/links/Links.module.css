@@ -1,18 +1,26 @@
+ul {
+    margin-top: 20px; /* Move a caixa de botões para baixo */
+}
+li {
+    margin-bottom: 12px; /* Adiciona espaçamento entre os botões!!! */
+}
+
 li a {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 16px 24px;
-
+    
     border: 1px solid var(--stroke-color);
     border-radius: 8px;
     background: var(--surface-color);
-
+    
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-
+    
     text-decoration: none;
     font-weight: bold;
+    
 }
 
 li a:hover {
