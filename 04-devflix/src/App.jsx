@@ -23,7 +23,6 @@ const App = () => {
   const searchMovies = async (title) => {
     const response = await fetch(`${apiUrl}&s=${title}`);
     const data = await response.json();
-
     //alimentando o movies
     setMovies(data.Search);
   };
@@ -44,27 +43,20 @@ const App = () => {
           type="text"
           placeholder="Pesquise por filmes"
         />
-        <img
-          onClick={() => searchMovies(search)}
-          src={Lupa}
-          alt=""
-        />
+        <img onClick={() => searchMovies(search)} src={Lupa} alt="" />
       </div>
 
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie, index) => (
-            <MovieCard key={index} {...movie} />
+            <MovieCard key={index} apiUrl={apiUrl} {...movie} />
           ))}
         </div>
       ) : (
         <h2 className="empty">😢 Filme não encontrado 😢</h2>
       )}
 
-      <Footer
-        devName={"Tiago P."}
-        devLink={"https://github.com/tiagop244"}
-      />
+      <Footer devName={"Tiago P."} devLink={"https://github.com/tiagop244"} />
     </div>
   );
 };
